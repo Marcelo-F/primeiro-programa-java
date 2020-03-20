@@ -57,7 +57,7 @@ public class Diretor extends Pessoa  implements PermitirAcesso{
 	@Override
 	public boolean autenticar() {
 		// TODO Auto-generated method stub
-		return login.equals("direct") && senha.equals("321");
+		return login.equals("diretor") && senha.equals("123");
 	}
 	
 	

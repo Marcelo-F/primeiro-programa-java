@@ -102,12 +102,12 @@ public class Aluno extends Pessoa {
 	public void setSerieMatriculado(String serieMatriculado) {
 		this.serieMatriculado = serieMatriculado;
 	}
-
+	/*Recebe a soma das notas do método getMediaNotas, e faz a média.*/
 	public double getMediaNota() {
 		double somaNotas = 0.0;
 
 		for (Disciplina disciplina : disciplinas) {
-			somaNotas += disciplina.getNota();
+			somaNotas += disciplina.getMediaNotas();
 		}
 
 		return somaNotas / disciplinas.size();
@@ -115,7 +115,7 @@ public class Aluno extends Pessoa {
 
 	public boolean getAlunoAprovado() {
 		double media = this.getMediaNota();
-		if (media >= 70) {
+		if (media >= 7) {
 			return true;
 		} else {
 			return false;
@@ -125,9 +125,9 @@ public class Aluno extends Pessoa {
 
 	public String getAlunoAprovado2() {
 		double media = this.getMediaNota();
-		if (media >= 70) {
+		if (media >= 7) {
 			return StatusAluno.APROVADO;
-		} else if (media >= 50) {
+		} else if (media >= 5) {
 			return StatusAluno.RECUPERACAO;
 		} else {
 			return  StatusAluno.REPROVADO;

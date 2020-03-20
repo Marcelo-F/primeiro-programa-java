@@ -1,6 +1,6 @@
 
 package cursojava.executavel;
-
+import cursojava.executavel.ArrayVetor;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -24,16 +24,15 @@ public class PrimeiraClasseJava {
 
 			lerArquivo();
 
-			String login = JOptionPane.showInputDialog("Infomr o login");
-			String senha = JOptionPane.showInputDialog("Infomr a senha");
+			String login = JOptionPane.showInputDialog("Infome o login");
+			String senha = JOptionPane.showInputDialog("Infome a senha");
 
 			if (new FuncaoAutenticacao(new Secretario(login, senha)).autenticar()) {
-
 				List<Aluno> alunos = new ArrayList<Aluno>();
 
 				HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 
-				for (int qtd = 1; qtd <= 2; qtd++) {
+				for (int qtd = 1; qtd <= 1; qtd++) {
 
 					String nome = JOptionPane.showInputDialog("Qual é o nome do aluno " + qtd + "? ");
 					String idade = JOptionPane.showInputDialog("Qual é a idade? ");
@@ -56,22 +55,20 @@ public class PrimeiraClasseJava {
 					aluno1.setDataMatricula(dataMatricula);
 					aluno1.setNomeEscola(NomeEscola);
 
-					/*
-					 * Disciplina disciplina1 = new Disciplina();
-					 * disciplina1.setDisciplina("Bando de dados"); disciplina1.setNota(90);
-					 * 
-					 * aluno1.getDisciplinas().add(disciplina1);
-					 */
+					
 
-					for (int pos = 1; pos <= 1; pos++) {
+					for (int pos = 1; pos <= 2; pos++) {
 						String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina " + pos + "?");
 						String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina " + pos + "?");
 
 						Disciplina disciplina = new Disciplina();
 						disciplina.setDisciplina(nomeDisciplina);
-						disciplina.setNota(Double.valueOf(notaDisciplina));
-
+						//disciplina.setNota(notaDisciplina);
+						
 						aluno1.getDisciplinas().add(disciplina);
+					
+						
+						
 					}
 
 					int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover algum disicplina ? ");
@@ -123,7 +120,7 @@ public class PrimeiraClasseJava {
 				System.out.println("------------Lista Reprovado-----------");
 				for (Aluno aluno : maps.get(StatusAluno.REPROVADO)) {
 					System.out.println(
-							"Resultado = " + aluno.getAlunoAprovado2() + "Com media de =" + aluno.getMediaNota());
+							"Resultado = " + aluno.getAlunoAprovado2() + " Com media de =" + aluno.getMediaNota());
 				}
 
 			} else {
